@@ -13,6 +13,7 @@ HexMate combines three integrated modules:
 ## Key Features
 
 ### Document Management System (DMS)
+
 - Hierarchical document organization with cabinets and folders
 - Document profiles and categories
 - Structure templates for consistent organization
@@ -22,6 +23,7 @@ HexMate combines three integrated modules:
 - Comprehensive audit logs and reporting
 
 ### Correspondence Tracking System (CTS)
+
 - Correspondence lifecycle management
 - Workflow automation and routing
 - Entity management and delegation
@@ -31,6 +33,7 @@ HexMate combines three integrated modules:
 - Real-time dashboards and analytics
 
 ### Visitor Management System (VMS)
+
 - Appointment scheduling and management
 - Visitor check-in/check-out tracking
 - Workflow configuration
@@ -82,9 +85,9 @@ Configure modules in `public/config.json`:
 ```json
 {
   "modules": [
-    {"id": 1, "name": "DMS", "link": "/dms/documents"},
-    {"id": 2, "name": "CTS", "link": "/cts/dashboard"},
-    {"id": 3, "name": "VMS", "link": "/vms/dashboard"}
+    { "id": 1, "name": "DMS", "link": "/dms/documents" },
+    { "id": 2, "name": "CTS", "link": "/cts/dashboard" },
+    { "id": 3, "name": "VMS", "link": "/vms/dashboard" }
   ]
 }
 ```
@@ -121,13 +124,6 @@ Comprehensive documentation is available in the `/docs` directory:
 - [Security](docs/SECURITY.md) - Security best practices and considerations
 - [Contributing](docs/CONTRIBUTING.md) - Contribution guidelines
 
-## User Manuals
-
-User manuals for each module are available in the `public` folder:
-- [DMS User Manual](public/usermanual_dms.pdf)
-- [CTS User Manual](public/usermanual_cts.pdf)
-- [VMS User Manual](public/usermanual_vms.pdf)
-
 ## Project Structure
 
 ```
@@ -149,6 +145,7 @@ hexmate/
 ## Support
 
 For issues, questions, or contributions, please refer to:
+
 - [Issue Tracker](https://github.com/feditech/hexmate/issues)
 - [Contributing Guidelines](docs/CONTRIBUTING.md)
 - [Security Policy](docs/SECURITY.md)
