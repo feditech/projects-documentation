@@ -1,157 +1,304 @@
-# DocLink Documentation
+# DocLink - Digitizing Primary Healthcare in Pakistan
 
-Welcome to the comprehensive documentation for DocLink - Pakistan's premier digital healthcare platform.
+<div align="center">
 
-## 📚 Documentation Index
+**Connecting You to Your Own Doctor - 24/7**
 
-### Getting Started
-Start here if you're new to DocLink:
+[![Next.js](https://img.shields.io/badge/Next.js-12.3.1-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-17-blue?logo=react)](https://reactjs.org/)
+[![Material-UI](https://img.shields.io/badge/MUI-5-007FFF?logo=mui)](https://mui.com/)
+[![License](https://img.shields.io/badge/license-Private-red)]()
 
-1. **[Project Overview](./PROJECT_OVERVIEW.md)** - Learn about DocLink's mission, vision, and technology
-2. **[Getting Started](./GETTING_STARTED.md)** - Installation and setup instructions
-3. **[User Guide](./USER_GUIDE.md)** - Complete guide for end-users
+[About](#about) • [Features](#features) • [Getting Started](#getting-started) • [Documentation](#documentation) • [Contributing](#contributing)
 
-### For Developers
-Essential documentation for developers:
-
-1. **[Architecture](./ARCHITECTURE.md)** - Technical architecture and design patterns
-2. **[Development Guide](./DEVELOPMENT.md)** - Development workflow and best practices
-3. **[API Documentation](./API_DOCUMENTATION.md)** - API endpoints and integration guide
-4. **[Contributing](./CONTRIBUTING.md)** - Contribution guidelines and standards
-
-### For Operations
-Deployment and operations documentation:
-
-1. **[Deployment Guide](./DEPLOYMENT.md)** - Deploy to various platforms
-2. **[Features](./FEATURES.md)** - Comprehensive feature documentation
-
-## 📖 Quick Navigation
-
-### By Role
-
-**I'm a new developer:**
-1. Read [Project Overview](./PROJECT_OVERVIEW.md)
-2. Follow [Getting Started](./GETTING_STARTED.md)
-3. Study [Architecture](./ARCHITECTURE.md)
-4. Review [Development Guide](./DEVELOPMENT.md)
-
-**I'm a contributor:**
-1. Read [Contributing Guidelines](./CONTRIBUTING.md)
-2. Review [Development Guide](./DEVELOPMENT.md)
-3. Check [API Documentation](./API_DOCUMENTATION.md)
-
-**I'm deploying the application:**
-1. Follow [Getting Started](./GETTING_STARTED.md)
-2. Read [Deployment Guide](./DEPLOYMENT.md)
-3. Review [Architecture](./ARCHITECTURE.md)
-
-**I'm a user:**
-1. Read [User Guide](./USER_GUIDE.md)
-2. Check [Features](./FEATURES.md)
-3. Visit the FAQ section in the app
-
-### By Topic
-
-**Architecture & Design:**
-- [Architecture Documentation](./ARCHITECTURE.md)
-- [Project Overview - Technology Stack](./PROJECT_OVERVIEW.md#technology-stack)
-
-**Development:**
-- [Development Guide](./DEVELOPMENT.md)
-- [Contributing Guidelines](./CONTRIBUTING.md)
-- [Getting Started](./GETTING_STARTED.md)
-
-**Features:**
-- [Features Documentation](./FEATURES.md)
-- [User Guide](./USER_GUIDE.md)
-
-**API Integration:**
-- [API Documentation](./API_DOCUMENTATION.md)
-- [Architecture - API Integration](./ARCHITECTURE.md#api-integration-pattern)
-
-**Deployment:**
-- [Deployment Guide](./DEPLOYMENT.md)
-- [Getting Started - Building](./GETTING_STARTED.md#building-for-production)
-
-## 📊 Documentation Statistics
-
-- **Total Documents**: 9 comprehensive markdown files
-- **Total Lines**: 4,000+ lines of documentation
-- **Total Words**: ~35,000 words
-- **Coverage**: User guides, technical docs, API reference, deployment
-
-## 🔗 External Resources
-
-- **Main Repository**: [feditech/doclink-web](https://github.com/feditech/doclink-web)
-- **Next.js Documentation**: https://nextjs.org/docs
-- **Material-UI Documentation**: https://mui.com
-- **React Documentation**: https://reactjs.org
-
-## 📝 Documentation Structure
-
-```
-docs/
-├── README.md                    # This file - Documentation index
-├── PROJECT_OVERVIEW.md          # Mission, vision, introduction (73 lines)
-├── GETTING_STARTED.md           # Installation and setup (192 lines)
-├── ARCHITECTURE.md              # Technical architecture (301 lines)
-├── FEATURES.md                  # Feature documentation (382 lines)
-├── USER_GUIDE.md                # End-user guide (568 lines)
-├── DEVELOPMENT.md               # Developer workflow (708 lines)
-├── API_DOCUMENTATION.md         # API reference (695 lines)
-├── CONTRIBUTING.md              # Contribution guidelines (536 lines)
-└── DEPLOYMENT.md                # Deployment guide (602 lines)
-```
-
-## 🎯 Key Features Documented
-
-1. **Subscription Plans** - 24/7 doctor access
-2. **Lab Tests** - Discounted lab test booking
-3. **Medical Records** - Secure document storage
-4. **Doctor Network** - Browse and connect with doctors
-5. **Mobile Apps** - Patient and doctor applications
-6. **Health Blog** - Educational content
-7. **Consultations** - Video, audio, and chat
-8. **Telemedicine** - Remote healthcare access
-
-## 🛠️ Technology Stack Documented
-
-- **Frontend**: Next.js 12.3.1, React 17
-- **UI Library**: Material-UI v5
-- **State Management**: Redux with Redux Thunk
-- **Styling**: Styled Components, Emotion, Sass
-- **HTTP Client**: Axios
-- **Animations**: Framer Motion
-- And more...
-
-## 🚀 Quick Start
-
-1. Clone the repository
-2. Follow [Getting Started Guide](./GETTING_STARTED.md)
-3. Read [Architecture Documentation](./ARCHITECTURE.md)
-4. Start developing with [Development Guide](./DEVELOPMENT.md)
-
-## 📞 Support
-
-- **Technical Issues**: See [Troubleshooting](./DEVELOPMENT.md#troubleshooting)
-- **Contribution Questions**: See [Contributing](./CONTRIBUTING.md)
-- **General Questions**: Contact dev@doclink.com
-
-## 🔄 Documentation Updates
-
-This documentation is actively maintained. Last updated: December 2024
-
-To suggest improvements:
-1. Open an issue
-2. Submit a pull request
-3. Follow [Contributing Guidelines](./CONTRIBUTING.md)
-
-## 📄 License
-
-Documentation licensed under the same terms as the DocLink project.
+</div>
 
 ---
 
+## About
+
+DocLink is a comprehensive digital healthcare platform revolutionizing primary healthcare delivery in Pakistan. We connect patients with qualified doctors through a subscription-based model, making healthcare affordable, accessible, and available 24/7.
+
+### Mission
+
+To connect the entire population of Pakistan with their own Doctors, providing seamless healthcare access at minimum cost.
+
+### Vision
+
+To build a subscription-based digital healthcare system in Pakistan, making healthcare affordable and accessible to all.
+
+### Tagline
+
+**"Kabhi Bhi, Kahin Bhi, Rahein Connected 24/7"**  
+*Stay Connected Anytime, Anywhere 24/7*
+
+---
+
+## Features
+
+### 🏥 Subscription Plans
+- **24/7 Doctor Access**: Stay connected with your own doctor anytime
+- **Affordable Pricing**: Starting at PKR 699 with up to 50% off
+- **Unlimited Consultations**: Chat, audio, or video consultations
+- **Digital Prescriptions**: Instant digital prescriptions
+
+### 🧪 Lab Tests
+- **Trusted Labs**: Network of verified laboratory partners
+- **Discounted Rates**: Save up to 50% on lab tests
+- **Home Collection**: Sample collection at your doorstep
+- **Digital Reports**: Instant digital lab reports
+
+### 📋 Medical Records
+- **Secure Storage**: Cloud-based secure document storage
+- **Easy Access**: Access records anytime, anywhere
+- **Share with Doctors**: Instantly share with healthcare providers
+- **Complete History**: Organized chronological medical history
+
+### 👨‍⚕️ Doctor Network
+- **Verified Doctors**: All doctors are verified professionals
+- **Multiple Specialties**: Wide range of medical specialties
+- **Patient Reviews**: Read reviews from other patients
+- **Easy Booking**: Simple appointment scheduling
+
+### 📱 Mobile Applications
+- **Patient App**: Available on Google Play Store
+- **Doctor App**: For healthcare providers
+- **Video Consultations**: High-quality video calls
+- **Chat Support**: Text-based consultations
+
+### 📝 Health Blog
+- **Educational Content**: Expert health and wellness articles
+- **Regular Updates**: Fresh content added regularly
+- **Expert Writers**: Written by healthcare professionals
+- **Multiple Categories**: Health tips, nutrition, mental health, and more
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js**: v14.x or higher (recommended: v16.x or v18.x)
+- **npm**: v6.x or higher
+- **Git**: For version control
+
+### Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/feditech/doclink-web.git
+cd doclink-web
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your configuration
+
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see the application.
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server on port 3000 |
+| `npm run build` | Create optimized production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint to check code quality |
+| `npm run export` | Export app as static HTML |
+
+---
+
+## Technology Stack
+
+### Core Technologies
+- **Framework**: [Next.js 12.3.1](https://nextjs.org/) - React framework with SSR
+- **UI Library**: [React 17](https://reactjs.org/) - Component-based UI
+- **UI Components**: [Material-UI v5](https://mui.com/) - Comprehensive component library
+- **State Management**: [Redux](https://redux.js.org/) with Redux Thunk
+- **Styling**: Styled Components + Emotion + Sass
+
+### Key Libraries
+- **HTTP Client**: Axios
+- **Animations**: Framer Motion
+- **Media Player**: React Player
+- **Notifications**: React Hot Toast, React Toastify
+- **Date Handling**: Moment.js, date-fns
+- **Carousel**: React Slick
+- **Scrolling**: React Scroll
+
+---
+
+## Documentation
+
+Comprehensive documentation is available in the `docs/` directory:
+
+### 📚 Core Documentation
+
+- **[Project Overview](./docs/PROJECT_OVERVIEW.md)** - Introduction, mission, vision, and technology stack
+- **[Getting Started Guide](./docs/GETTING_STARTED.md)** - Installation, setup, and configuration
+- **[Architecture Documentation](./docs/ARCHITECTURE.md)** - Technical architecture and design patterns
+- **[Features Documentation](./docs/FEATURES.md)** - Detailed feature descriptions
+- **[User Guide](./docs/USER_GUIDE.md)** - End-user documentation
+
+### 👩‍💻 Developer Documentation
+
+- **[Development Guide](./docs/DEVELOPMENT.md)** - Development workflow and best practices
+- **[API Documentation](./docs/API_DOCUMENTATION.md)** - API endpoints and integration
+- **[Contributing Guidelines](./docs/CONTRIBUTING.md)** - How to contribute to the project
+- **[Deployment Guide](./docs/DEPLOYMENT.md)** - Deployment instructions and options
+
+### Quick Links
+
+- **Setup**: See [Getting Started Guide](./docs/GETTING_STARTED.md)
+- **Architecture**: See [Architecture Documentation](./docs/ARCHITECTURE.md)
+- **API Reference**: See [API Documentation](./docs/API_DOCUMENTATION.md)
+- **Contributing**: See [Contributing Guidelines](./docs/CONTRIBUTING.md)
+
+---
+
+## Project Structure
+
+```
+doclink-web/
+├── components/         # React components
+│   ├── header/        # Header components
+│   ├── footer/        # Footer variations
+│   ├── home/          # Home page components
+│   ├── aboutus/       # About us components
+│   └── ...            # Other feature components
+├── pages/             # Next.js pages (routes)
+│   ├── index.js       # Home page
+│   ├── about-us/      # About us page
+│   ├── doctors/       # Doctors listing
+│   ├── blogs/         # Health blogs
+│   └── ...            # Other pages
+├── public/            # Static assets
+│   └── assets/        # Images, fonts, icons
+├── redux/             # Redux store
+├── restApis/          # API configurations
+├── styles/            # Global styles
+├── utils/             # Utility functions
+└── docs/              # Documentation
+```
+
+For detailed structure, see [Architecture Documentation](./docs/ARCHITECTURE.md).
+
+---
+
+## Contributing
+
+We welcome contributions from the community! Please read our [Contributing Guidelines](./docs/CONTRIBUTING.md) before submitting pull requests.
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow the [Development Guide](./docs/DEVELOPMENT.md)
+- Adhere to coding standards in [Contributing Guidelines](./docs/CONTRIBUTING.md)
+- Write clean, documented code
+- Test thoroughly before submitting
+
+---
+
+## Deployment
+
+DocLink can be deployed to various platforms:
+
+- **Vercel** (Recommended) - Optimized for Next.js
+- **Netlify** - Static site hosting
+- **AWS** - Amplify or Elastic Beanstalk
+- **Docker** - Container deployment
+- **Traditional Node.js** - Any VPS or dedicated server
+
+For detailed deployment instructions, see [Deployment Guide](./docs/DEPLOYMENT.md).
+
+---
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+---
+
+## Security
+
+- End-to-end encryption for sensitive data
+- Industry-standard compliant data storage
+- Secure authentication and authorization
+- Regular security audits
+
+For security concerns, please contact: security@doclink.com
+
+---
+
+## Support
+
+### For Users
+- **Email**: support@doclink.com
+- **Phone**: +92-XXX-XXXXXXX
+- **User Guide**: See [User Guide](./docs/USER_GUIDE.md)
+- **FAQs**: Visit the FAQ section on the website
+
+### For Developers
+- **Issues**: GitHub Issues for bug reports
+- **Discussions**: GitHub Discussions for questions
+- **Documentation**: See `docs/` directory
+- **Email**: dev@doclink.com
+
+---
+
+## License
+
+This project is private and proprietary. All rights reserved.
+
+---
+
+## Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- UI components from [Material-UI](https://mui.com/)
+- Healthcare professionals who guide our mission
+- Users who trust DocLink with their healthcare needs
+
+---
+
+## Learn More
+
+### About Next.js
+
+- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features
+- [Learn Next.js](https://nextjs.org/learn) - Interactive Next.js tutorial
+- [Next.js GitHub](https://github.com/vercel/next.js/) - Next.js repository
+
+### About DocLink
+
+- Visit our website (configured URL)
+- Read our [blog posts](./pages/blogs)
+- Check out the [About Us](./pages/about-us) page
+- Explore [Subscription Plans](./pages/subscription-plans)
+
+---
+
+<div align="center">
+
 **Made with ❤️ for better healthcare in Pakistan**
 
-*"Kabhi Bhi, Kahin Bhi, Rahein Connected 24/7"*
+[Website](#) • [Documentation](./docs/) • [Support](mailto:support@doclink.com)
+
+</div>
