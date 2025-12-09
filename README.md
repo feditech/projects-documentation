@@ -214,14 +214,14 @@ Siraj consists of two main components:
 
 Administrative interface for managing the Siraj platform.
 
-[📖 Read Admin Panel Documentation →](./siraj%20docs/siraj_admin_panel_docs/)
+[📖 Read Admin Panel Documentation →](./siraj%20docs/siraj_admin_panel_docs/README.md)
 
 #### Siraj Website
 **Location:** [`siraj docs/siraj_website_docs/`](./siraj%20docs/siraj_website_docs/)
 
 Public-facing website for the Siraj platform.
 
-[📖 Read Website Documentation →](./siraj%20docs/siraj_website_docs/)
+[📖 Read Website Documentation →](./siraj%20docs/siraj_website_docs/README.md)
 
 ---
 
