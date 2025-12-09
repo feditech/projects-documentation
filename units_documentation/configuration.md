@@ -11,14 +11,16 @@ The application uses environment variables for configuration. These are defined 
 #### Required Variables
 
 **`REACT_APP_BASE_API`**
+
 - **Description**: Base URL for the backend API
-- **Example**: `https://api.units.compass-dx.com/api/`
+- **Example**: `https://api.units.abc.com/api/`
 - **Note**: Must end with a trailing slash
 - **Required**: Yes
 
 **`REACT_APP_GOOGLE_MAPS_API_KEY`**
+
 - **Description**: Google Maps API key for address selection and mapping
-- **Example**: `AIzaSyA3FzKFHiA7bUcmOaubinG6wqCZt8Dw7Yk`
+- **Example**: `AIzaSyA3FzKwewewqqqqaubinG6wqCZt8Dw7Yk`
 - **Required**: Yes (for address features)
 - **How to get**: [Google Cloud Console](https://console.cloud.google.com/)
 
@@ -32,18 +34,21 @@ REACT_APP_GOOGLE_MAPS_API_KEY=your-google-maps-api-key-here
 ### Environment-Specific Configuration
 
 #### Development Environment
+
 ```env
 REACT_APP_BASE_API=http://localhost:5000/api/
 REACT_APP_GOOGLE_MAPS_API_KEY=your-dev-api-key
 ```
 
 #### Staging Environment
+
 ```env
 REACT_APP_BASE_API=https://staging-api.units.compass-dx.com/api/
 REACT_APP_GOOGLE_MAPS_API_KEY=your-staging-api-key
 ```
 
 #### Production Environment
+
 ```env
 REACT_APP_BASE_API=https://api.units.compass-dx.com/api/
 REACT_APP_GOOGLE_MAPS_API_KEY=your-production-api-key
@@ -58,11 +63,13 @@ The application supports English and Arabic by default.
 #### Adding New Language
 
 1. **Create translation file**:
+
    ```
    src/locales/{language-code}/translation.json
    ```
 
 2. **Add translations**:
+
    ```json
    {
      "Dashboard": "Translated Dashboard",
@@ -86,6 +93,7 @@ The application supports English and Arabic by default.
 #### Setting Default Language
 
 Edit `src/index.tsx`:
+
 ```typescript
 i18n.use(initReactI18next).init({
   lng: 'en', // Change default language here
@@ -106,10 +114,10 @@ Themes are managed in the `TenantThemeProvider` component.
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2', // Primary color
+      main: "#1976d2", // Primary color
     },
     secondary: {
-      main: '#dc004e', // Secondary color
+      main: "#dc004e", // Secondary color
     },
   },
   typography: {
@@ -131,6 +139,7 @@ For multi-tenant deployments, themes can be customized per tenant:
 #### Date Format
 
 Default format is based on locale:
+
 - English: MM/DD/YYYY
 - Arabic: DD/MM/YYYY
 
@@ -141,14 +150,15 @@ To customize, edit date picker components in `src/components/units_controls/`
 The application uses the browser's local timezone. To set a specific timezone:
 
 1. Install `moment-timezone`:
+
    ```bash
    npm install moment-timezone
    ```
 
 2. Configure default timezone:
    ```typescript
-   import moment from 'moment-timezone';
-   moment.tz.setDefault('Asia/Riyadh');
+   import moment from "moment-timezone";
+   moment.tz.setDefault("Asia/Riyadh");
    ```
 
 ## Build Configuration
@@ -198,6 +208,7 @@ The application uses the browser's local timezone. To set a specific timezone:
 ```
 
 **Script Usage**:
+
 - `npm start`: Start development server (port 3000)
 - `npm run build`: Create production build
 - `npm test`: Run tests in watch mode
@@ -208,11 +219,7 @@ The application uses the browser's local timezone. To set a specific timezone:
 ```json
 {
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -229,10 +236,7 @@ The application uses the browser's local timezone. To set a specific timezone:
 ```json
 {
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": ["react-app", "react-app/jest"]
   }
 }
 ```
@@ -314,11 +318,13 @@ server {
 #### Nginx with Let's Encrypt
 
 1. **Install Certbot**:
+
    ```bash
    sudo apt install certbot python3-certbot-nginx
    ```
 
 2. **Obtain certificate**:
+
    ```bash
    sudo certbot --nginx -d units.example.com
    ```
@@ -355,11 +361,13 @@ server {
 #### CloudFront (AWS)
 
 1. **Create distribution**:
+
    - Origin: Your S3 bucket or web server
    - Default root object: `index.html`
    - Error pages: Redirect 404 to `/index.html` (200 status)
 
 2. **Custom error responses**:
+
    - 404 → `/index.html` (200) for SPA routing
    - 403 → `/index.html` (200) for SPA routing
 
@@ -398,7 +406,7 @@ CMD ["nginx", "-g", "daemon off;"]
 #### docker-compose.yml
 
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   units-web:
@@ -416,6 +424,7 @@ services:
 ### Google Maps
 
 1. **Get API Key**:
+
    - Go to [Google Cloud Console](https://console.cloud.google.com/)
    - Create project
    - Enable Maps JavaScript API
@@ -423,6 +432,7 @@ services:
    - Restrict key to your domain
 
 2. **Configure in app**:
+
    - Add to `.env`: `REACT_APP_GOOGLE_MAPS_API_KEY=your-key`
 
 3. **Usage limits**:
@@ -435,6 +445,7 @@ services:
 1. **Register app** in Salla Developer Portal
 
 2. **Configure OAuth**:
+
    - Client ID: From Salla
    - Client Secret: Store securely (backend)
    - Redirect URI: `https://units.example.com/sallaauthresponse`
@@ -450,7 +461,7 @@ services:
 Already configured via React.lazy() in routes. To add more:
 
 ```typescript
-const HeavyComponent = React.lazy(() => import('./HeavyComponent'));
+const HeavyComponent = React.lazy(() => import("./HeavyComponent"));
 ```
 
 ### Build Optimization
@@ -462,6 +473,7 @@ npm install --save-dev source-map-explorer
 ```
 
 Add to `package.json`:
+
 ```json
 {
   "scripts": {
@@ -471,6 +483,7 @@ Add to `package.json`:
 ```
 
 Run:
+
 ```bash
 npm run build
 npm run analyze
@@ -483,10 +496,11 @@ npm run analyze
 To enable offline support:
 
 1. Edit `src/index.tsx`:
+
    ```typescript
    // Change from:
    serviceWorkerRegistration.unregister();
-   
+
    // To:
    serviceWorkerRegistration.register();
    ```
@@ -500,11 +514,13 @@ To enable offline support:
 #### Sentry Integration
 
 1. **Install**:
+
    ```bash
    npm install @sentry/react
    ```
 
 2. **Configure** in `src/index.tsx`:
+
    ```typescript
    import * as Sentry from "@sentry/react";
 
@@ -520,15 +536,17 @@ To enable offline support:
 #### Google Analytics
 
 1. **Install**:
+
    ```bash
    npm install react-ga4
    ```
 
 2. **Configure** in `src/index.tsx`:
-   ```typescript
-   import ReactGA from 'react-ga4';
 
-   ReactGA.initialize('G-XXXXXXXXXX');
+   ```typescript
+   import ReactGA from "react-ga4";
+
+   ReactGA.initialize("G-XXXXXXXXXX");
    ```
 
 3. **Track page views** in `App.tsx`:
@@ -545,12 +563,14 @@ To enable offline support:
 Add to `public/index.html`:
 
 ```html
-<meta http-equiv="Content-Security-Policy" 
-      content="default-src 'self'; 
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; 
                script-src 'self' 'unsafe-inline'; 
                style-src 'self' 'unsafe-inline'; 
                img-src 'self' data: https:; 
-               connect-src 'self' https://api.units.compass-dx.com;">
+               connect-src 'self' https://api.units.compass-dx.com;"
+/>
 ```
 
 ### CORS Configuration
