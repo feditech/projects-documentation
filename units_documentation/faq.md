@@ -11,6 +11,7 @@ Units is a cloud-based warehouse management system (WMS) designed to manage inve
 ### Who can use Units?
 
 Units is designed for:
+
 - **Warehouse operators**: Businesses that provide warehousing and logistics services
 - **E-commerce companies**: Managing inventory and fulfillment
 - **Retailers**: Multi-location inventory management
@@ -51,6 +52,7 @@ Yes. A customer account can have multiple users. Each user has their own login c
 ### What's the difference between Admin and Customer users?
 
 **Admin Users**:
+
 - Full system access
 - Manage all customers
 - Perform warehouse operations
@@ -58,6 +60,7 @@ Yes. A customer account can have multiple users. Each user has their own login c
 - Access all reports
 
 **Customer Users**:
+
 - Access their own data only
 - Create orders and inbound requests
 - View their inventory
@@ -91,6 +94,7 @@ Yes! Units is responsive and works on mobile devices. However, some tasks are be
 ### Does Units support barcode scanning?
 
 Yes. Units supports:
+
 - USB barcode scanners (keyboard wedge mode)
 - Bluetooth barcode scanners
 - Camera-based scanning (mobile devices)
@@ -99,6 +103,7 @@ Yes. Units supports:
 ### Can I import data in bulk?
 
 Yes. Units supports bulk import via Excel for:
+
 - SKUs (products)
 - Customers
 - Suppliers
@@ -110,6 +115,7 @@ Download the import template, fill it in, and upload.
 ### Can I export reports to Excel?
 
 Yes. Most reports can be exported to:
+
 - Excel (.xlsx)
 - PDF
 - CSV
@@ -119,6 +125,7 @@ Look for the "Export" button on report pages.
 ### Does Units integrate with e-commerce platforms?
 
 Yes. Currently Units integrates with:
+
 - **Salla**: Saudi e-commerce platform
 - **Custom integrations**: Via API
 
@@ -127,6 +134,7 @@ More integrations can be added as needed.
 ### Can I track inventory by lot or batch number?
 
 Yes. Units supports:
+
 - Batch/lot number tracking
 - Serial number tracking (individual items)
 - Expiry date management
@@ -136,6 +144,7 @@ Yes. Units supports:
 ### Does Units support multi-warehouse operations?
 
 Yes. You can:
+
 - Manage multiple warehouses
 - Transfer stock between warehouses
 - View inventory across all locations
@@ -159,6 +168,7 @@ Yes. Customer users can view their real-time inventory levels, locations, and st
 ### What if I receive more or less than expected?
 
 The system tracks variances:
+
 - **Overshipment**: Counted quantity exceeds expected
 - **Undershipment**: Counted quantity less than expected
 
@@ -171,6 +181,7 @@ Yes. When creating an inbound request, you can select a time slot. Available tim
 ### What happens after goods are received?
 
 The standard workflow is:
+
 1. **Goods Receiving (GRN)**: Record receipt
 2. **Counting**: Verify quantities
 3. **Quality Control**: Inspect condition
@@ -200,6 +211,7 @@ When adding items to an order, the system shows available quantity. If there's i
 ### Can I cancel an order?
 
 Yes, but it depends on the order status:
+
 - **Before picking starts**: Usually can cancel
 - **During picking/packing**: May need admin approval
 - **After dispatch**: Cannot cancel, must process as return
@@ -209,6 +221,7 @@ Contact your administrator or check the order status page for options.
 ### What shipping carriers are supported?
 
 This depends on your warehouse's configuration. Common carriers include:
+
 - Local delivery services
 - International couriers (DHL, FedEx, Aramex, etc.)
 - Self-collection
@@ -259,20 +272,24 @@ Yes. Open the SKU and click **Edit**. You can update most fields. The SKU code t
 ### How do I check current stock levels?
 
 **Method 1: SKU List**
+
 - Go to **SKU** menu
 - View stock column for each SKU
 
 **Method 2: SKU Details**
+
 - Open specific SKU
 - View detailed stock by location
 
 **Method 3: Reports**
+
 - Go to **Reports → SKU Report**
 - View comprehensive inventory report
 
 ### What if inventory count is wrong?
 
 **For Admins**:
+
 1. Perform physical count
 2. Navigate to stock adjustment page
 3. Enter correct quantity
@@ -280,6 +297,7 @@ Yes. Open the SKU and click **Edit**. You can update most fields. The SKU code t
 5. Submit
 
 **For Customers**:
+
 - Request admin to perform adjustment
 - Provide evidence if needed (photos, documents)
 
@@ -293,6 +311,7 @@ Yes. Open the SKU and click **Edit**. You can update most fields. The SKU code t
 ### Can I see history of stock movements?
 
 Yes. Go to **Reports → Stock Movement Report**:
+
 - Select date range
 - Optionally filter by SKU
 - View all ins, outs, and adjustments
@@ -303,10 +322,12 @@ Yes. Go to **Reports → Stock Movement Report**:
 ### What reports are available?
 
 **Admin Reports**:
+
 - Inbound Report: Receiving metrics
 - Order Report: Fulfillment statistics
 
 **Customer Reports**:
+
 - SKU Report: Inventory valuation
 - Stock Movement Report: Transaction history
 
@@ -323,6 +344,7 @@ You can typically view all historical data from when your account started. Use d
 ### Can I customize reports?
 
 Standard reports have predefined formats. For custom reports, contact your administrator. They may be able to:
+
 - Generate custom queries
 - Create new report templates
 - Provide raw data exports
@@ -332,6 +354,7 @@ Standard reports have predefined formats. For custom reports, contact your admin
 ### What happens if I lose internet connection?
 
 Units requires internet connectivity to function. If connection is lost:
+
 - Unsaved data will be lost
 - Save work frequently
 - Connection restored: page may need refresh
@@ -344,6 +367,7 @@ Yes. The backend system performs regular backups. Data is stored securely and re
 ### Is Units secure?
 
 Yes. Units uses industry-standard security measures:
+
 - HTTPS encryption for all communication
 - JWT-based authentication
 - Role-based access control
@@ -361,7 +385,7 @@ No. Units requires internet connectivity. It's a cloud-based system that needs t
 
 ### What if Units is down?
 
-- Check [status page](https://status.units.compass-dx.com) if available
+- Check [status page](https://status.units.abc.com) if available
 - Contact your system administrator
 - Check your internet connection first
 - Try accessing from different device/network
@@ -375,6 +399,7 @@ Yes. Units provides a RESTful API for integration. Contact your administrator or
 ### How is Units priced?
 
 Pricing typically depends on:
+
 - Number of users
 - Storage capacity used
 - Transaction volume (inbounds/outbounds)
@@ -389,6 +414,7 @@ Contact Units sales team for trial availability and demo options.
 ### What's included in the base price?
 
 This varies by plan. Typically includes:
+
 - Core WMS features
 - Standard reporting
 - Customer support
@@ -403,12 +429,13 @@ Check your contract or contact sales for details.
 1. **Documentation**: Check this guide and other docs
 2. **In-app help**: Look for (?) icons
 3. **Administrator**: Contact your system admin
-4. **Support**: Email support@units.compass-dx.com
+4. **Support**: Email support@units.abc.com
 5. **Training**: Request training sessions
 
 ### Is training available?
 
 Yes. Training options typically include:
+
 - Initial onboarding training
 - Role-specific training
 - On-site or remote sessions
@@ -420,6 +447,7 @@ Contact your administrator or sales team.
 ### What support hours are available?
 
 Support hours depend on your service agreement. Typically:
+
 - Standard support: Business hours (8 AM - 7 PM)
 - Premium support: Extended hours or 24/7
 
@@ -428,6 +456,7 @@ Check your contract for specific SLA.
 ### How quickly will my issue be resolved?
 
 Resolution time depends on:
+
 - Issue severity (Critical, High, Medium, Low)
 - Support plan level
 - Complexity of the issue
@@ -439,6 +468,7 @@ Critical issues affecting business operations are prioritized.
 ### How often is Units updated?
 
 Units is continuously improved with:
+
 - Regular feature updates
 - Bug fixes and security patches
 - Performance improvements
@@ -449,6 +479,7 @@ Updates are applied transparently without downtime.
 ### Can I request new features?
 
 Yes! Feature requests are welcome:
+
 - Contact your account manager
 - Submit via support channel
 - Participate in user feedback sessions
@@ -465,7 +496,7 @@ If your question isn't answered here:
 
 1. **Search the documentation**: Use Ctrl+F in relevant docs
 2. **Contact your administrator**: They may have organization-specific answers
-3. **Contact support**: Email support@units.compass-dx.com with your question
+3. **Contact support**: Email support@units.abc.com with your question
 4. **Training**: Request a training session to learn more
 
 ## Helpful Resources

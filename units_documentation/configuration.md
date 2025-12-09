@@ -27,7 +27,7 @@ The application uses environment variables for configuration. These are defined 
 #### Example `.env` File
 
 ```env
-REACT_APP_BASE_API=https://api.units.compass-dx.com/api/
+REACT_APP_BASE_API=https://api.units.abc.com/api/
 REACT_APP_GOOGLE_MAPS_API_KEY=your-google-maps-api-key-here
 ```
 
@@ -43,14 +43,14 @@ REACT_APP_GOOGLE_MAPS_API_KEY=your-dev-api-key
 #### Staging Environment
 
 ```env
-REACT_APP_BASE_API=https://staging-api.units.compass-dx.com/api/
+REACT_APP_BASE_API=https://staging-api.units.abc.com/api/
 REACT_APP_GOOGLE_MAPS_API_KEY=your-staging-api-key
 ```
 
 #### Production Environment
 
 ```env
-REACT_APP_BASE_API=https://api.units.compass-dx.com/api/
+REACT_APP_BASE_API=https://api.units.abc.com/api/
 REACT_APP_GOOGLE_MAPS_API_KEY=your-production-api-key
 ```
 
@@ -414,7 +414,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - REACT_APP_BASE_API=https://api.units.compass-dx.com/api/
+      - REACT_APP_BASE_API=https://api.units.abc.com/api/
       - REACT_APP_GOOGLE_MAPS_API_KEY=your-api-key
     restart: unless-stopped
 ```
@@ -569,7 +569,7 @@ Add to `public/index.html`:
                script-src 'self' 'unsafe-inline'; 
                style-src 'self' 'unsafe-inline'; 
                img-src 'self' data: https:; 
-               connect-src 'self' https://api.units.compass-dx.com;"
+               connect-src 'self' https://api.units.abc.com;"
 />
 ```
 

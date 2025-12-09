@@ -6,17 +6,20 @@ This document provides technical reference for the Units API used by the web app
 
 The Units backend API is a RESTful service that provides data and operations for the warehouse management system. The frontend communicates with this API to perform all business operations.
 
-**Base URL**: `https://api.units.compass-dx.com/api/`
+**Base URL**: `https://api.units.abc.com/api/`
 
 ## Authentication
 
 ### Authentication Method
+
 The API uses JWT (JSON Web Token) based authentication.
 
 ### Login
+
 **Endpoint**: `POST /auth/login`
 
 **Request Body**:
+
 ```json
 {
   "email": "user@example.com",
@@ -26,6 +29,7 @@ The API uses JWT (JSON Web Token) based authentication.
 ```
 
 **Response**:
+
 ```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -41,18 +45,22 @@ The API uses JWT (JSON Web Token) based authentication.
 ```
 
 **User Types**:
+
 - `A`: Admin
 - `C`: Customer
 
 ### Token Refresh
+
 **Endpoint**: `POST /auth/refresh`
 
 **Headers**:
+
 ```
 Authorization: Bearer {token}
 ```
 
 **Response**:
+
 ```json
 {
   "token": "new-jwt-token",
@@ -61,6 +69,7 @@ Authorization: Bearer {token}
 ```
 
 ### Authenticated Requests
+
 All subsequent requests must include the token in the Authorization header:
 
 ```
@@ -70,13 +79,16 @@ Authorization: Bearer {token}
 ## Common Patterns
 
 ### Pagination
+
 List endpoints support pagination via query parameters:
 
 **Parameters**:
+
 - `page`: Page number (1-indexed)
 - `perPage`: Results per page (default: 30, max: 100)
 
 **Response includes**:
+
 ```json
 {
   "data": [...],
@@ -90,22 +102,27 @@ List endpoints support pagination via query parameters:
 ```
 
 ### Filtering
+
 List endpoints support filtering via query parameters:
 
 **Example**:
+
 ```
 GET /inboundrequests?status=pending&customerId=123
 ```
 
 ### Sorting
+
 Use `sortBy` and `sortOrder` parameters:
 
 **Example**:
+
 ```
 GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 ### Date Formats
+
 - ISO 8601 format: `2024-12-06T12:00:00Z`
 - Dates without time: `2024-12-06`
 
@@ -114,9 +131,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ### 1. Inbound Requests
 
 #### List Inbound Requests
+
 **Endpoint**: `GET /inboundrequests`
 
 **Query Parameters**:
+
 - `customerId`: Filter by customer
 - `status`: Filter by status (request, grn, counting, qc, putaway, completed)
 - `fromDate`: Filter from date
@@ -125,6 +144,7 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 - `perPage`: Results per page
 
 **Response**:
+
 ```json
 {
   "data": [
@@ -156,9 +176,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Create Inbound Request
+
 **Endpoint**: `POST /inboundrequests`
 
 **Request Body**:
+
 ```json
 {
   "customerId": "customer-456",
@@ -178,15 +200,19 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 **Response**: Returns created inbound request object
 
 #### Update Inbound Request
+
 **Endpoint**: `PUT /inboundrequests/{id}`
 
 #### Delete Inbound Request
+
 **Endpoint**: `DELETE /inboundrequests/{id}`
 
 #### Goods Receiving
+
 **Endpoint**: `POST /inboundrequests/{id}/receive`
 
 **Request Body**:
+
 ```json
 {
   "vehicleLicense": "ABC-123",
@@ -198,9 +224,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Counting
+
 **Endpoint**: `POST /inboundrequests/{id}/count`
 
 **Request Body**:
+
 ```json
 {
   "items": [
@@ -216,9 +244,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Quality Control
+
 **Endpoint**: `POST /inboundrequests/{id}/qc`
 
 **Request Body**:
+
 ```json
 {
   "items": [
@@ -235,9 +265,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Putaway
+
 **Endpoint**: `POST /inboundrequests/{id}/putaway`
 
 **Request Body**:
+
 ```json
 {
   "items": [
@@ -254,15 +286,18 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ### 2. Outbound Requests (Orders)
 
 #### List Orders
+
 **Endpoint**: `GET /outboundrequests`
 
 **Query Parameters**:
+
 - `customerId`: Filter by customer
 - `status`: Filter by status
 - `fromDate`, `toDate`: Date range
 - `page`, `perPage`: Pagination
 
 **Response**:
+
 ```json
 {
   "data": [
@@ -293,9 +328,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Create Order
+
 **Endpoint**: `POST /outboundrequests`
 
 **Request Body**:
+
 ```json
 {
   "customerId": "customer-456",
@@ -316,9 +353,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Assign Picker
+
 **Endpoint**: `POST /outboundrequests/{id}/assign`
 
 **Request Body**:
+
 ```json
 {
   "pickerId": "user-picker-001"
@@ -326,9 +365,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Record Picking
+
 **Endpoint**: `POST /outboundrequests/{id}/pick`
 
 **Request Body**:
+
 ```json
 {
   "items": [
@@ -343,9 +384,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Outbound QC
+
 **Endpoint**: `POST /outboundrequests/{id}/qc`
 
 **Request Body**:
+
 ```json
 {
   "qcStatus": "passed",
@@ -354,9 +397,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Record Packing
+
 **Endpoint**: `POST /outboundrequests/{id}/pack`
 
 **Request Body**:
+
 ```json
 {
   "packages": [
@@ -373,9 +418,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Dispatch Order
+
 **Endpoint**: `POST /outboundrequests/{id}/dispatch`
 
 **Request Body**:
+
 ```json
 {
   "dispatchedAt": "2024-12-06T16:00:00Z",
@@ -387,9 +434,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ### 3. SKU Management
 
 #### List SKUs
+
 **Endpoint**: `GET /sku`
 
 **Query Parameters**:
+
 - `customerId`: Filter by customer
 - `categoryId`: Filter by category
 - `brandId`: Filter by brand
@@ -397,6 +446,7 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 - `page`, `perPage`: Pagination
 
 **Response**:
+
 ```json
 {
   "data": [
@@ -433,9 +483,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Create SKU
+
 **Endpoint**: `POST /sku`
 
 **Request Body**:
+
 ```json
 {
   "skuCode": "PROD-002",
@@ -463,15 +515,19 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Update SKU
+
 **Endpoint**: `PUT /sku/{id}`
 
 #### Delete SKU
+
 **Endpoint**: `DELETE /sku/{id}`
 
 #### Get Stock Levels
+
 **Endpoint**: `GET /sku/{id}/stock`
 
 **Response**:
+
 ```json
 {
   "skuId": "sku-001",
@@ -493,9 +549,11 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ### 4. Warehouse Management
 
 #### List Warehouses
+
 **Endpoint**: `GET /warehouses`
 
 **Response**:
+
 ```json
 {
   "data": [
@@ -527,14 +585,17 @@ GET /sku?sortBy=createdAt&sortOrder=desc
 ```
 
 #### Get Warehouse Details
+
 **Endpoint**: `GET /warehouses/{id}`
 
 Includes full hierarchy: Areas → Racks → Locations
 
 #### List Locations
+
 **Endpoint**: `GET /warehouses/{warehouseId}/locations`
 
 **Query Parameters**:
+
 - `areaId`: Filter by area
 - `rackId`: Filter by rack
 - `available`: Filter available locations (true/false)
@@ -542,9 +603,11 @@ Includes full hierarchy: Areas → Racks → Locations
 ### 5. Customer Management
 
 #### List Customers
+
 **Endpoint**: `GET /customers`
 
 **Response**:
+
 ```json
 {
   "data": [
@@ -564,12 +627,15 @@ Includes full hierarchy: Areas → Racks → Locations
 ```
 
 #### Create Customer
+
 **Endpoint**: `POST /customers`
 
 #### Update Customer
+
 **Endpoint**: `PUT /customers/{id}`
 
 #### Customer Addresses
+
 **Endpoint**: `GET /customers/{id}/addresses`
 
 **Endpoint**: `POST /customers/{id}/addresses`
@@ -577,14 +643,17 @@ Includes full hierarchy: Areas → Racks → Locations
 ### 6. User Management
 
 #### List Users
+
 **Endpoint**: `GET /users`
 
 **Query Parameters**:
+
 - `userType`: Filter by type (A/C)
 - `customerId`: Filter by customer
 - `status`: Filter by status (active/inactive)
 
 **Response**:
+
 ```json
 {
   "data": [
@@ -602,9 +671,11 @@ Includes full hierarchy: Areas → Racks → Locations
 ```
 
 #### Create User
+
 **Endpoint**: `POST /users`
 
 **Request Body**:
+
 ```json
 {
   "email": "newuser@example.com",
@@ -616,17 +687,21 @@ Includes full hierarchy: Areas → Racks → Locations
 ```
 
 #### Update User
+
 **Endpoint**: `PUT /users/{id}`
 
 #### Deactivate User
+
 **Endpoint**: `DELETE /users/{id}` or `PUT /users/{id}` with `status: "inactive"`
 
 ### 7. Reporting
 
 #### Inbound Report
+
 **Endpoint**: `GET /reports/inbound`
 
 **Query Parameters**:
+
 - `fromDate`: Start date
 - `toDate`: End date
 - `customerId`: Filter by customer
@@ -634,6 +709,7 @@ Includes full hierarchy: Areas → Racks → Locations
 - `warehouseId`: Filter by warehouse
 
 **Response**:
+
 ```json
 {
   "summary": {
@@ -647,14 +723,17 @@ Includes full hierarchy: Areas → Racks → Locations
 ```
 
 #### Order Report
+
 **Endpoint**: `GET /reports/orders`
 
 **Query Parameters**:
+
 - `fromDate`, `toDate`: Date range
 - `customerId`: Filter by customer
 - `status`: Filter by status
 
 **Response**:
+
 ```json
 {
   "summary": {
@@ -668,13 +747,16 @@ Includes full hierarchy: Areas → Racks → Locations
 ```
 
 #### SKU Report
+
 **Endpoint**: `GET /reports/sku`
 
 **Query Parameters**:
+
 - `customerId`: Filter by customer
 - `categoryId`: Filter by category
 
 **Response**:
+
 ```json
 {
   "summary": {
@@ -688,15 +770,18 @@ Includes full hierarchy: Areas → Racks → Locations
 ```
 
 #### Stock Movement Report
+
 **Endpoint**: `GET /reports/stock-movements`
 
 **Query Parameters**:
+
 - `fromDate`, `toDate`: Date range
 - `skuId`: Filter by SKU
 - `customerId`: Filter by customer
 - `movementType`: Filter by type (inbound/outbound/adjustment)
 
 **Response**:
+
 ```json
 {
   "data": [
@@ -717,24 +802,28 @@ Includes full hierarchy: Areas → Racks → Locations
 ### 8. Master Data
 
 #### Suppliers
+
 - `GET /suppliers` - List suppliers
 - `POST /suppliers` - Create supplier
 - `PUT /suppliers/{id}` - Update supplier
 - `DELETE /suppliers/{id}` - Delete supplier
 
 #### Brands
+
 - `GET /brands` - List brands
 - `POST /brands` - Create brand
 - `PUT /brands/{id}` - Update brand
 - `DELETE /brands/{id}` - Delete brand
 
 #### Carriers
+
 - `GET /carriers` - List carriers
 - `POST /carriers` - Create carrier
 - `PUT /carriers/{id}` - Update carrier
 - `DELETE /carriers/{id}` - Delete carrier
 
 #### Packing Materials
+
 - `GET /packingmaterials` - List materials
 - `POST /packingmaterials` - Create material
 - `PUT /packingmaterials/{id}` - Update material
@@ -743,6 +832,7 @@ Includes full hierarchy: Areas → Racks → Locations
 ## Error Handling
 
 ### HTTP Status Codes
+
 - `200 OK`: Successful request
 - `201 Created`: Resource created successfully
 - `400 Bad Request`: Invalid request data
@@ -754,6 +844,7 @@ Includes full hierarchy: Areas → Racks → Locations
 - `500 Internal Server Error`: Server error
 
 ### Error Response Format
+
 ```json
 {
   "error": {
@@ -768,6 +859,7 @@ Includes full hierarchy: Areas → Racks → Locations
 ```
 
 ### Common Error Codes
+
 - `INVALID_EMAIL_PASSWORD`: Login credentials incorrect
 - `USER_NOT_FOUND`: User doesn't exist
 - `INVALID_TOKEN_ACCESS`: Token invalid or expired
@@ -781,6 +873,7 @@ The API may implement rate limiting to prevent abuse. If rate limited, you'll re
 **Status**: `429 Too Many Requests`
 
 **Headers**:
+
 ```
 X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 0
@@ -792,6 +885,7 @@ X-RateLimit-Reset: 1638316800
 If the API supports webhooks, subscribers can receive real-time notifications for events:
 
 ### Event Types
+
 - `inbound.received`: Goods received
 - `inbound.completed`: Inbound completed
 - `order.created`: New order
@@ -799,6 +893,7 @@ If the API supports webhooks, subscribers can receive real-time notifications fo
 - `inventory.low_stock`: Low stock alert
 
 ### Webhook Payload Example
+
 ```json
 {
   "event": "order.dispatched",
